@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication2.app" >
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.myapplication2.app.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.myapplication2.app.CreateForm"
+            android:label="@string/title_activity_create_form" >
+            android:parentActivityName="com.example.myapplication2.app.MainActivity" >
+        </activity>
+
+        <activity
+            android:name="com.example.myapplication2.app.FindProfiles"
+            android:label="@string/app_name"
+            android:parentActivityName="com.example.myapplication2.app.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.alvin.lahacks.MainActivity" />
+        </activity>
+
+        <activity
+            android:name="com.example.myapplication2.app.MyProfiles"
+            android:label="@string/app_name"
+            android:parentActivityName="com.example.myapplication2.app.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.alvin.lahacks.MainActivity" />
+        </activity>
+
+        <activity
+            android:name="com.example.myapplication2.app.SavedProfiles"
+            android:label="@string/app_name"
+            android:parentActivityName="com.example.myapplication2.app.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.alvin.lahacks.MainActivity" />
+        </activity>
+
+
+    </application>
+
+</manifest>

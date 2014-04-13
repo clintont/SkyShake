@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--C:\Users\CT\AndroidStudioProjects\MyApplication2\app\src\main\res\layout-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bg"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="269dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:id="@+id/formlistview"
+    android:orientation="vertical"
+        android:layout_weight="0.20">
+    <EditText
+       android:id="@+id/eventname"
+       android:layout_width="250dp"
+       android:layout_height="wrap_content"
+       android:layout_weight="0"
+       android:hint="Event Name"/>
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:hint="Name"/>
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:hint="Phone" />
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="250dp"
+        android:layout_weight="0"
+        android:layout_height="wrap_content"
+        android:hint="E-mail" />
+
+    </LinearLayout></ScrollView>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|bottom"
+        android:orientation="vertical"
+        android:layout_weight="0.27"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0"
+            android:onClick="sendProfile"/>
+
+        <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Add New Field"
+        android:onClick="addField"/>
+    </LinearLayout>
+</RelativeLayout>

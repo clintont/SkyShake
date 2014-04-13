@@ -53,6 +53,25 @@
                 android:value="com.alvin.lahacks.MainActivity" />
         </activity>
 
+        <activity
+            android:name="com.example.myapplication2.app.DetailedProfile"
+            android:label="@string/app_name"
+            android:parentActivityName="com.example.myapplication2.app.MyProfiles">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.alvin.lahacks.MyProfiles" />
+        </activity>
+
+        <activity
+            android:name="com.example.myapplication2.app.DetailedFriendProfile"
+            android:label="@string/app_name"
+            android:parentActivityName="com.example.myapplication2.app.SavedProfiles">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.alvin.lahacks.MyProfiles" />
+        </activity>
+
+
 
     </application>
 

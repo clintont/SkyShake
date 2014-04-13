@@ -45,13 +45,6 @@ public class SavedProfiles extends Activity implements OnClickListener {
 		tv.setText("Cool People");
 		//ll.setBackgroundResource(R.drawable.bg);
 		ll.addView(tv);
-
-		// BUTTON FOR NEW PROFILE
-		Button b = new Button(this);
-		b.setText("Create New Profile");
-		b.setOnClickListener(this);
-		b.setId(99999);
-		ll.addView(b);
 			
 		// EXISTING PROFILES
 		File dir = getFilesDir();
@@ -69,7 +62,7 @@ public class SavedProfiles extends Activity implements OnClickListener {
 	        data = new String(buffer);
 	        in.close();
 	        
-	        b = new Button(this);
+	        Button b = new Button(this);
 			b.setText(file.getName());
 			b.setOnClickListener(this);
 			ll.addView(b);
@@ -80,17 +73,9 @@ public class SavedProfiles extends Activity implements OnClickListener {
 	    
 	public void onClick(View v) {
 	    	
-	    // NEW PROFILE BUTTON
-	    int id = v.getId();
-	    if(id == 99999) {
-	    	Intent intent = new Intent(this, CreateForm.class);
-	    	startActivity(intent);
-	    	return;
-	    }
-	    	
 	    // DETAILED PROFILE SELECTION
 	    friendProfile = ((Button)v).getText().toString();
-	    Intent intent = new Intent(this, DetailedProfile.class);
+	    Intent intent = new Intent(this, DetailedFriendProfile.class);
 	    startActivity(intent);
 	    	
 	}

@@ -1,5 +1,13 @@
 package com.example.myapplication2.app;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -10,6 +18,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import com.example.myapplication2.app.MainActivity;
+import com.example.myapplication2.app.NetworkThread;
 
 public class FindProfiles extends Activity implements OnClickListener{
 	
@@ -65,7 +76,31 @@ public class FindProfiles extends Activity implements OnClickListener{
     public void onClick(View v) {
     	int id = v.getId();
     	String mac = MainActivity.bluetoothList.get(id)[0];
-    	NetworkThread.receiveProfile(mac);
+    	JSONObject json = NetworkThread.receiveProfile(mac);
+    	
+    	String FILENAME = MainActivity.bluetoothList.get(id)[1];
+
+        File file = new File(getFilesDir(), FILENAME);
+        FileWriter filewriter = null;
+		try {
+			filewriter = new FileWriter(file);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        BufferedWriter out = new BufferedWriter(filewriter);
+        try {
+			out.write(json.toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        try {
+			out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 	
 	

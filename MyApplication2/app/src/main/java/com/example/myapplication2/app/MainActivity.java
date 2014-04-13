@@ -15,11 +15,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 
-import com.example.myapplication2.app.FindProfiles;
+
 import com.example.myapplication2.app.MyProfiles;
 import com.example.myapplication2.app.NetworkThread;
 import com.example.myapplication2.app.R;
-import com.example.myapplication2.app.SavedProfiles;
+
 
 public class MainActivity extends Activity {
 

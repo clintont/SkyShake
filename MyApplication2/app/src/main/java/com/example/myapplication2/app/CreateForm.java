@@ -1,32 +1,23 @@
 package com.example.myapplication2.app;
-
-import android.app.Activity;
-import android.content.Context;
-import android.os.StrictMode;
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.util.Log;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.LinearLayout.LayoutParams;
-import android.view.View;
-import com.example.myapplication2.app.FormConstants;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.StrictMode;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
+import android.widget.Toast;
 
 public class CreateForm extends Activity {
 
@@ -78,6 +69,7 @@ public class CreateForm extends Activity {
             FT[1] = tv.getText().toString();
             fieldTerm.add(FT);
         }
+        
         NetworkThread.addProfiles();
 
         JSONObject json = new JSONObject();
@@ -85,10 +77,17 @@ public class CreateForm extends Activity {
         for(int i = 0; i < fieldTerm.size(); i++) {
             json.put(fieldTerm.get(i)[0], fieldTerm.get(i)[1]);
         }
-        String FILENAME = fieldTerm.get(0)[0] + " Profile";
-        FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
-        fos.write(json.toString().getBytes());
-        fos.close();
+        
+        String FILENAME = fieldTerm.get(0)[1] + " Profile";
+        File file = new File(getFilesDir(), FILENAME);
+        FileWriter filewriter = new FileWriter(file);
+        BufferedWriter out = new BufferedWriter(filewriter);
+        out.write(json.toString());
+        //Toast.makeText(this, json.toString(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, fieldTerm.get(0)[1], Toast.LENGTH_LONG).show();
+        out.close();
+        
     }
 
 }
+

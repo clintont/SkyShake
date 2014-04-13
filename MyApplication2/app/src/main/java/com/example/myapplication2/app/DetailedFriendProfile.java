@@ -50,6 +50,8 @@ public class DetailedFriendProfile extends Activity{
         ll.setOrientation(LinearLayout.VERTICAL);
         sv.addView(ll);
 
+        ll.setBackgroundResource(R.drawable.bg);
+
         File file = new File(getFilesDir(), SavedProfiles.friendProfile);
         FileReader filereader = null;
         try {

@@ -49,7 +49,9 @@ public class DetailedProfile extends Activity{
 		LinearLayout ll = new LinearLayout(this);
 		ll.setOrientation(LinearLayout.VERTICAL);
 		sv.addView(ll);
-		
+
+        ll.setBackgroundResource(R.drawable.bg);
+
 		File file = new File(getFilesDir(), MyProfiles.detailedProfile);
 		FileReader filereader = null;
 		try {

@@ -53,6 +53,8 @@ public class FindProfiles extends Activity implements OnClickListener{
 		ll.setOrientation(LinearLayout.VERTICAL);
 		sv.addView(ll);
 
+        ll.setBackgroundResource(R.drawable.bg);
+
 		TextView tv = new TextView(this);
 		tv.setTextSize(30);
 		tv.setGravity(Gravity.CENTER_HORIZONTAL);
